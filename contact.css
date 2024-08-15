@@ -1,0 +1,113 @@
+body{
+    background-color: rgb(36, 93, 150);
+}
+
+.logo{
+    width: 125px;
+    height: 62.5px;
+    margin-left: 25px;
+    cursor: pointer;
+}
+
+.navbar-text{
+    display: inline-block;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    color: white;
+    font-family: Questrial;
+    margin-right: 15px;
+    cursor: pointer;
+    position: relative;
+    font-size: 18px;
+}
+
+.navbar-right{
+    display: inline-block;
+}
+
+.navbar{
+    display: inline-grid;
+    grid-template-columns: 900px 1fr;
+}
+
+.navbar-text::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: rgb(248, 0, 103);
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: .3s;
+}
+
+.navbar-text:hover:after{
+    width: 100%;
+}
+
+.box1-h1{
+    font-family: Overpass;
+    color: white;
+    text-align: center;
+}
+
+.box1-p{
+    font-family: Questrial;
+    color: rgb(162, 162, 162);
+    width: 90%;
+    text-align: center;
+    margin-left: 15px;
+}
+.box1 { 
+    width: 400px;
+    background-color: #1c1f2b;
+    text-align: center;
+    border-radius: 13px;
+    position: relative;
+    display:inline-block;
+    padding: 1em;
+    margin-top: 200px;
+    margin-left: 470px;
+}
+
+@property --angle{
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.box1::after, .box1::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle),#ff4545 , #00ff99 , #006aff , #ff0095 , #ff4545);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 2.945px;
+    border-radius: 13px;
+    animation: 3s spin linear infinite;
+} 
+
+.box1::before{
+    filter: blur(1.69rem);
+}
+
+@keyframes spin{
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+}
+
+.main{
+    display: flex;
+    flex-direction: row;
+}
+
+.box1-p a{
+    text-decoration: none;
+}
